@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Musique</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <!-- <audio controls id="lecteur" ontimeupdate="changeTimeSpend()" ondurationchange="changeDuration()"></audio> -->
+
+        <section id="controlemusique">
+
+            <!-- MUSIQUE -->
+            <nav id="lecture">
+                <button type="button" id="precedente" onclick="prev()"><i class="fa-solid fa-arrow-right fa-rotate-180"></i></button>
+
+                <!-- PLAY - PAUSE -->
+                <button type="button" id="lecture" onclick="lecture()"><i class="fa-solid fa-play"></i></button>
+                <audio id="lecteur" ontimeupdate="changeTimeSpend()" ondurationchange="changeDuration()"></audio>
+
+                <button type="button" id="suivante" onclick="next()"><i class="fa-solid fa-arrow-right"></i></button>
+            </nav>
+
+            <!-- VOLUME -->
+            <nav id="volume">
+
+                <!-- VOLUME - -->
+                <button type="button" id="volume-" onclick="volumeMoins()"><i class="fa-solid fa-volume-low"></i></button>
+                
+                <!-- VOLUME RANGE -->
+                <!-- Range à une valeur mini de 0 et max de 1 (par pas de 0.1), événement en "onchange"-->
+                <input type="range" id="barrevolume" min="0" step="0.1" max="1" onchange="volumechange()">
+
+                <!-- VOLUME + -->
+                <button type="button" id="volume+" onclick="volumePlus()"><i class="fa-solid fa-volume-high"></i></button>
+            </nav>
+
+        </section>
+
+        <section id="titreactuel">
+            <h3 id="nomArt">Nom artiste</h3>
+            <h4 id="nomChan">Titre de la chanson</h4>
+            <div id="timer"></div>
+            <input type="range" id="tempsmusique" min="0" max="" value="0" onchange="changeRangeTime()">
+        </section>
+
+        <section id="search">
+            <button type="button" id="recherche"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" placeholder="recherche">
+
+        </section>
+    </header>
+    <main>
+        <aside class="filtre">
+
+            <a href="#">Music</a>
+            <a href="#">Vidéos</a>
+            <a href="#">Podcast</a>
+
+
+        </aside>
+        <section class="contenu">
+
+            <article class="musique" onclick="lecturemusique(0)">
+                <img src="images/150/1.jpg" >
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+            <article class="musique" onclick="lecturemusique(1)">
+                <img src="images/150/2.jpg" >
+                <audio id="lecteur2"></audio>
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+            <article class="musique" onclick="lecturemusique(2)">
+                <img src="images/150/3.jpg" >
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+            <article class="musique" onclick="lecturemusique(3)">
+                <img src="images/150/4.jpg">
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+            <article class="musique" onclick="lecturemusique(4)">
+                <img src="images/150/5.jpg">
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+            <article class="musique" onclick="lecturemusique(5)">
+                <img src="images/150/6.jpg">
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+            <article class="musique" onclick="lecturemusique(6)">
+                <img src="images/150/7.jpg">
+                <h2>Titre</h2>
+                <h3>Nom artiste</h3>
+            </article>
+
+        </section>
+    </main>
+
+    <script src="https://kit.fontawesome.com/d46da3a841.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
